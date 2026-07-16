@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Happy Birthday Kashish 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+       <link rel="icon" href="adwaitlogo.jpg" type="image/jpg">
+
+</head>
+
+<body>
+   <!-- for bg music -->
+  <audio id="bgMusic" autoplay muted loop playsinline>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("bgMusic");
+
+async function startMusic() {
+    try {
+        audio.muted = false;
+        await audio.play();
+    } catch (err) {
+        console.log("Play failed:", err);
+    }
+
+    document.removeEventListener("pointerdown", startMusic);
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+    document.removeEventListener("touchend", startMusic);
+    window.removeEventListener("scroll", startMusic);
+}
+
+document.addEventListener("pointerdown", startMusic, { once: true });
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
+document.addEventListener("touchend", startMusic, { once: true });
+window.addEventListener("scroll", startMusic, { once: true });
+</script>
+
+    <!-- Floating Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="typewriter" id="typewriter">Happy Birthday, Kashish 💕</h1>
+            <p class="subtitle fade-in">Today is all about celebrating you and haan, party toh banti hai, so don't forget to give me a treat! 😄🎂
+</p>
+            <div class="floating-hearts">
+                <div class="heart">❤️</div>
+                <div class="heart">💖</div>
+                <div class="heart">💕</div>
+                <div class="heart">💗</div>
+                <div class="heart">❤️</div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('gallery')">
+                Start the Celebration 🎉
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">See your self How cute you are</h2>
+            <div class="gallery-grid">
+                <div class="photo-card" data-aos="fade-up" data-delay="100">
+                    <div class="photo-container">
+                        <img src="IMG_20260709_215050_537.jpg"
+                            alt="Beautiful moment">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">Pretty without even trying</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="200">
+                    <div class="photo-container">
+                        <img src="IMG_20260709_215050_539.jpg"
+                            alt="Sweet memory">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">Face card never declines</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <div class="photo-card" data-aos="fade-up" data-delay="400">
+                    <div class="photo-container">
+                        <img src="IMG-20240609-WA0006~2.jpg"
+                            alt="Love moment">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">You have such a beautiful smile</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Message Section -->
+    <section class="message-section" id="message">
+        <div class="container">
+            <div class="message-card">
+                <h2 class="message-title">A Special Message for You</h2>
+                <div class="message-content">
+                    <p class="message-text fade-in-text">
+I hope aaj ka din aur poora saal tumhare liye bahut saari happiness, success aur beautiful memories lekar aaye. Tum hamesha aise hi smile karti raho, khush raho aur life mein jo bhi chaho woh sab achieve karo.
+
+Ek baat jo shayad main itni baar nahi bolta, but you're genuinely one of the best friends I have. ❤️ Tum mere liye bahut important ho, aur main honestly appreciate karta hoon ki tum meri life ka part ho. Thank you for being there, for all the random conversations and for simply being yourself.
+
+Kabhi apni kindness aur positivity mat change karna. Tumhari yahi cheezein tumhe alag banati hain. I really hope life tumhe hamesha wohi happiness de jo tum dusron ko feel karwati ho.
+
+Take care of yourself, enjoy your special day to the fullest, eat lots of cake, make amazing memories, and keep smiling because it really suits you. 🎂✨
+
+Once again, Happy Birthday! Wishing you nothing but the best. ❤️
+
+                    </p>
+                   
+                    <p class="message-signature fade-in-text">
+                       You're one of my best friends and I'm really lucky to have you. Stay happy and keep smiling always! 🎉
+                    </p>
+                </div>
+                <div class="message-hearts">
+                    <span class="heart-animation">💖</span>
+                    <span class="heart-animation">💕</span>
+                    <span class="heart-animation">💗</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026@Prashant zuzu Made with ❤️ for the most amazing person in the world</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+<!-- I love kashish so much -->
+</html>

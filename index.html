@@ -16,7 +16,7 @@
 
 <body>
    <!-- for bg music -->
-  <audio id="bgMusic" autoplay muted loop playsinline>
+  <audio id="bgMusic" loop playsinline>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -25,26 +25,17 @@ const audio = document.getElementById("bgMusic");
 
 async function startMusic() {
     try {
-        audio.muted = false;
         await audio.play();
+        console.log("Music Started");
     } catch (err) {
-        console.log("Play failed:", err);
+        console.log("Play Error:", err);
     }
 
     document.removeEventListener("pointerdown", startMusic);
-    document.removeEventListener("click", startMusic);
-    document.removeEventListener("touchstart", startMusic);
-    document.removeEventListener("touchend", startMusic);
-    window.removeEventListener("scroll", startMusic);
 }
 
-document.addEventListener("pointerdown", startMusic, { once: true });
-document.addEventListener("click", startMusic, { once: true });
-document.addEventListener("touchstart", startMusic, { once: true });
-document.addEventListener("touchend", startMusic, { once: true });
-window.addEventListener("scroll", startMusic, { once: true });
+document.addEventListener("pointerdown", startMusic);
 </script>
-
     <!-- Floating Background Particles -->
     <div class="particles" id="particles"></div>
 
